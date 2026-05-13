@@ -12,23 +12,23 @@ VALUES_DATA = {
         "desc": "두려움 속에서도<br>한 걸음 앞으로<br>나아가는 힘"
     },
     "성장": {
-        "icon": "https://cdn-icons-png.flaticon.com/512/2926/2926750.png",
+        "icon": "https://i.ibb.co/yn47G1Jd/grow.png",
         "desc": "작은 순간들이<br>모여 만드는<br>단단한 하루"
     },
     "자유": {
-        "icon": "https://cdn-icons-png.flaticon.com/512/2926/2926750.png",
+        "icon": "https://i.ibb.co/vxD8zR3v/freedom.png",
         "desc": "나답게 선택하고<br>나아갈 수 있는<br>당신의 권리"
     },
     "도전": {
-        "icon": "https://cdn-icons-png.flaticon.com/512/2926/2926750.png",
+        "icon": "https://i.ibb.co/fYPfjC21/challenge.png",
         "desc": "새로운 길 위에서<br>스스로를 믿고<br>시작하는 마음"
     },
     "연결": {
-        "icon": "https://cdn-icons-png.flaticon.com/512/2926/2926750.png",
+        "icon": "https://i.ibb.co/S4fgRTkQ/link.png",
         "desc": "함께하는 순간들이<br>만들어가는<br>따뜻한 관계"
     },
     "희망": {
-        "icon": "https://cdn-icons-png.flaticon.com/512/2926/2926750.png",
+        "icon": "https://i.ibb.co/8DvMs44h/hope.png",
         "desc": "지금 이 순간에도<br>피어나는<br>작은 가능성"
     }
 }
