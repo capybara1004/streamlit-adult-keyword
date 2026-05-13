@@ -357,7 +357,7 @@ def render_value_page():
                         display: flex; flex-direction: column; justify-content: center; align-items: center;
                         box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 0px; 
                     '>
-                        <img src='{data["icon"]}' width='70' style='margin-bottom: 25px;'/>
+                        <img src='{data["icon"]}' width='90' style='margin-bottom: 25px;'/>
                         <div style='font-size: 20px; font-weight: 600; color: #1e293b; margin-bottom: 15px;'>{val}</div>
                         <div style='font-size: 13px; color: #64748b; line-height: 1.6;'>{data["desc"]}</div>
                     </div>
