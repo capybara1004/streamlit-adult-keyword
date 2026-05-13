@@ -8,7 +8,7 @@ import streamlit as st
 VALUES = ["용기", "성장", "자유", "도전", "연결", "희망"]
 VALUES_DATA = {
     "용기": {
-        "icon": "https://cdn-icons-png.flaticon.com/512/2926/2926750.png",
+        "icon": "https://i.ibb.co/JFRyG4XF/courage.png",
         "desc": "두려움 속에서도<br>한 걸음 앞으로<br>나아가는 힘"
     },
     "성장": {
