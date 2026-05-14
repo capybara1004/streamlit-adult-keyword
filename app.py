@@ -62,7 +62,7 @@ NOUNS_DATA = {
         "image": "https://i.ibb.co/5h3dGKNn/Talk-File.png",
         "color": "rgba(120, 24, 22, 0.9)",        # 원래 장미 색상(검붉은색) 
         "text_color": "#EAD531",                  # 원래 책갈피 배경색(노란색)
-        "bg_img": "https://i.ibb.co/zHCtzXZt/D14-E4-DA9-02-C9-4367-BC45-5-C1-B0-AC1-AC70.png"
+        "bg_img": "https://i.ibb.co/jvrxCPpx/youth.png"
     },
     "비상": {
         "icon": "https://i.ibb.co/QF4qQRBm/D5-D9-CEEB-936-C-4687-9215-4042-E53-A0-F1-F.png",
