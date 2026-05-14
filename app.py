@@ -70,7 +70,7 @@ NOUNS_DATA = {
         "image": "https://i.ibb.co/KZJpbst/Talk-File.png",
         "color": "rgba(16, 29, 56, 0.9)",         # 원래 장미 색상(남색) 
         "text_color": "#EAAAC9",                  # 원래 책갈피 배경색(분홍색)
-        "bg_img": "https://i.ibb.co/WWpvTXGs/2716-A5-E8-6670-4233-B564-1-DD0-B5-AA645-E.png"
+        "bg_img": "https://i.ibb.co/3ygK4PQ5/bisang.png"
     },
 }
 
