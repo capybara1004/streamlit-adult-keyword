@@ -38,34 +38,38 @@ ADJ_WORDS_LIST = [
     "푸르른", "나만의", "성장의", "무한한", "눈부신", "새로운"
 ]
 
-NOUNS = ["첫걸음", "가능성", "청춘", "비행"]
+NOUNS = ["첫걸음", "가능성", "청춘", "비상"]
 NOUNS_DATA = {
     "첫걸음": {
-        "icon": "https://cdn-icons-png.flaticon.com/512/2926/2926750.png",
+        "icon": "https://i.ibb.co/vxXb6qr3/80155699-F795-4231-87-EF-5-A94-F9-B88455.png",
         "desc": "두려움 속에서도<br>한 걸음 앞으로<br>나아가는 힘",
-        "image": "rose1.png", 
-        "color": "rgba(255, 249, 196, 0.9)",
-        "bg_img": "https://i.ibb.co/zHCtzXZt/D14-E4-DA9-02-C9-4367-BC45-5-C1-B0-AC1-AC70.png"
+        "image":"https://i.ibb.co/Y74nCHLQ/Talk-File.png", 
+        "color": "rgba(240, 208, 16, 0.9)",       # 원래 장미 색상
+        "text_color": "#3962AD",                  # 원래 책갈피 배경색(파란색)
+        "bg_img": "https://i.ibb.co/svNWnR89/firststep.png"
     },
     "가능성": {
-        "icon": "https://cdn-icons-png.flaticon.com/512/2926/2926750.png",
+        "icon": "https://i.ibb.co/sJvzv6Tm/B9-AAD50-B-C09-F-465-A-ABF4-18-E186-D8-E65-B.png",
         "desc": "작은 순간들이<br>모여 만드는<br>단단한 하루",
-        "image": "rose2.png", 
-        "color": "rgba(255, 255, 240, 0.9)",
-        "bg_img": "https://i.ibb.co/p6z6mwYp/865-AFB2-D-5-E7-F-4822-A8-B3-4-C26-B55929-D7.png"
+        "image": "https://i.ibb.co/GvgnR60T/Talk-File.png",
+        "color": "rgba(255, 255, 255, 0.9)",      # 원래 장미 색상(흰색)
+        "text_color": "#2C6B37",                  # 원래 책갈피 배경색(초록색)
+        "bg_img": "https://i.ibb.co/sdL17hZD/IMG-0215.png"
     },
     "청춘": {
-        "icon": "https://cdn-icons-png.flaticon.com/512/2926/2926750.png",
+        "icon": "https://i.ibb.co/V0YYtKps/6-F7-B3-B88-2-C79-48-FC-AE3-D-C2397-C63-C62-D.png",
         "desc": "나답게 선택하고<br>나아갈 수 있는<br>당신의 권리",
-        "image": "https://i.ibb.co/V0PyhcPB/26-A0-FA28-19-BD-419-A-B1-FF-A4-A017-A58-B2-B.jpg",
-        "color": "rgba(255, 228, 230, 0.9)",
-        "bg_img": "https://i.ibb.co/XZdyVkRs/0-E1-BEFDC-5578-444-C-8288-F80-DB270-C158.png"
+        "image": "https://i.ibb.co/5h3dGKNn/Talk-File.png",
+        "color": "rgba(120, 24, 22, 0.9)",        # 원래 장미 색상(검붉은색) 
+        "text_color": "#EAD531",                  # 원래 책갈피 배경색(노란색)
+        "bg_img": "https://i.ibb.co/zHCtzXZt/D14-E4-DA9-02-C9-4367-BC45-5-C1-B0-AC1-AC70.png"
     },
-    "비행": {
-        "icon": "https://cdn-icons-png.flaticon.com/512/2926/2926750.png",
+    "비상": {
+        "icon": "https://i.ibb.co/QF4qQRBm/D5-D9-CEEB-936-C-4687-9215-4042-E53-A0-F1-F.png",
         "desc": "새로운 길 위에서<br>스스로를 믿고<br>시작하는 마음",
-        "image": "https://i.ibb.co/nqXqPQp9/IMG-0196.png", 
-        "color": "rgba(225, 245, 254, 0.9)",
+        "image": "https://i.ibb.co/KZJpbst/Talk-File.png",
+        "color": "rgba(16, 29, 56, 0.9)",         # 원래 장미 색상(남색) 
+        "text_color": "#EAAAC9",                  # 원래 책갈피 배경색(분홍색)
         "bg_img": "https://i.ibb.co/WWpvTXGs/2716-A5-E8-6670-4233-B564-1-DD0-B5-AA645-E.png"
     },
 }
@@ -247,7 +251,7 @@ def apply_card_css():
         </style>
     """, unsafe_allow_html=True)
 
-def apply_result_css(board_color, bg_url):
+def apply_result_css(board_color, bg_url, text_color):
     apply_font()
     st.markdown(f"""
         <style>
@@ -256,11 +260,17 @@ def apply_result_css(board_color, bg_url):
             background-position: center; background-attachment: fixed;
         }}
         .block-container {{
-            background-color: {board_color}; border-radius: 30px;
+            /* 배경색에 이미 rgba와 투명도가 포함되어 있습니다 */
+            background-color: {board_color}; 
+            border-radius: 30px;
             padding: 50px 30px; box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2); 
-            max-width: 850px !important; 
+            max-width: 600px !important; 
             margin-top: 80px;
-            text-align: center; color: #333;
+            text-align: center; color: {text_color};
+            /* 보드 내부 요소들의 글자색 강제 적용 */
+        }}
+        .block-container h1, .block-container h3 {{
+            color: {text_color} !important;
         }}
         button[kind="secondary"] {{
             background-color: #ffffff !important; 
@@ -288,7 +298,7 @@ def render_home_page():
     apply_home_css()
     st.markdown("<br><br><br>", unsafe_allow_html=True)
     
-    col1, spacer, col2 = st.columns([1, 0.2, 1])
+    col1, spacer, col2 = st.columns([1, 0.1, 1])
     with col1:
         st.markdown("<div class='sub-title'>성년의 날, 나에게 전하는 한 문장</div>", unsafe_allow_html=True)
         st.markdown("<div class='main-title'>나의 키워드</div>", unsafe_allow_html=True)
@@ -329,7 +339,18 @@ def render_home_page():
 def render_value_page():
     """새로 추가된 가치관 선택 페이지"""
     apply_card_css()
-    st.markdown("<br><br>", unsafe_allow_html=True)
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    # --- 장미 진행 가이드 (꽃봉오리) ---
+    _, img_col, _ = st.columns([1, 0.2, 1])
+    with img_col:
+        st.markdown("""
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <img src="https://i.ibb.co/5xsSsqX5/IMG-0209.jpg" style="width: 45px; height: auto; margin-bottom: 5px;">
+            <p style='color: #94A3B8; font-size: 13px; margin: 0;'>1 / 3 단계</p>
+        </div>
+    """, unsafe_allow_html=True)
+    # -----------------------------------
     
     st.markdown("<h3 style='text-align: center; font-weight: 600; color: #FFFFFF;'>당신이 중요하게 생각하는 가치는 무엇인가요?</h3>", unsafe_allow_html=True)
     st.markdown("""
@@ -357,7 +378,7 @@ def render_value_page():
                         display: flex; flex-direction: column; justify-content: center; align-items: center;
                         box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 0px; 
                     '>
-                        <img src='{data["icon"]}' width='90' style='margin-bottom: 25px;'/>
+                        <img src='{data["icon"]}' width='35' style='margin-bottom: 25px;'/>
                         <div style='font-size: 20px; font-weight: 600; color: #1e293b; margin-bottom: 15px;'>{val}</div>
                         <div style='font-size: 13px; color: #64748b; line-height: 1.6;'>{data["desc"]}</div>
                     </div>
@@ -377,8 +398,19 @@ def render_value_page():
 def render_adj_page():
     apply_adj_css()
     st.markdown("<br>", unsafe_allow_html=True)
+
+    # --- 장미 진행 가이드 (개화 중) ---
+    _, img_col, _ = st.columns([1, 0.2, 1])
+    with img_col:
+        st.markdown("""
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <img src="https://i.ibb.co/27cPzfYm/IMG-0210.jpg" style="width: 45px; height: auto; margin-bottom: 5px;">
+            <p style='color: #94A3B8; font-size: 13px; margin: 0;'>2 / 3 단계</p>
+        </div>
+    """, unsafe_allow_html=True)
+    # -----------------------------------
     
-    st.markdown("<h2 style='text-align: center; color: #FFFFFF;'>✨스물에 가장 걸맞는다고 생각되는 형용사를 골라주세요 ✨</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center; color: #FFFFFF;'>✨스물에 가장 걸맞는 형용사를 골라주세요 ✨</h2>", unsafe_allow_html=True)
     st.write("---")
     
     cols = st.columns(3)
@@ -397,7 +429,18 @@ def render_adj_page():
 
 def render_noun_page():
     apply_card_css()
-    st.markdown("<br><br>", unsafe_allow_html=True)
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    # --- 장미 진행 가이드 (만개) ---
+    _, img_col, _ = st.columns([1, 0.2, 1])
+    with img_col:
+        st.markdown("""
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <img src="https://i.ibb.co/MD31QLnv/IMG-0211.jpg" style="width: 45px; height: auto; margin-bottom: 5px;">
+            <p style='color: #94A3B8; font-size: 13px; margin: 0;'>3 / 3 단계</p>
+        </div>
+    """, unsafe_allow_html=True)
+    # -----------------------------------
     
     st.markdown("<h3 style='text-align: center; font-weight: 600; color: #FFFFFF;'>당신에게 어울리는 키워드예요</h3>", unsafe_allow_html=True)
     st.markdown("""
@@ -442,9 +485,10 @@ def render_result_page():
         if st.button("홈으로"): change_page("home")
         return
 
-    apply_result_css(data["color"], data["bg_img"])
+    # 배경색과 글자색 인자를 모두 전달
+    apply_result_css(data["color"], data["bg_img"], data.get("text_color", "#333"))
     
-    st.markdown("<h1 style='text-align: center; color: #333;'>🌹 당신을 위한 한 마디 🌹</h1>", unsafe_allow_html=True)
+    st.markdown(f"<h1 style='text-align: center;'>🌹 당신을 위한 한 마디 🌹</h1>", unsafe_allow_html=True)
     
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
@@ -453,7 +497,7 @@ def render_result_page():
             
     st.markdown("<br>", unsafe_allow_html=True)
     # 가치관, 형용사, 명사가 모두 포함된 응원 문구
-    st.markdown(f"<h3 style='text-align: center; color: #333;'><b>{st.session_state.name}</b>님의 <b>{st.session_state.value}</b>의 가치를 담은 <br><br><b>{st.session_state.adj} {st.session_state.noun}</b> 응원합니다!</h3>", unsafe_allow_html=True)
+    st.markdown(f"<h3 style='text-align: center;'><b>{st.session_state.name}</b>님의 <b>{st.session_state.value}</b>의 가치가 담긴<br><br><b>{st.session_state.adj} {st.session_state.noun}</b> 응원합니다!</h3>", unsafe_allow_html=True)
     st.balloons()
     
     if st.button("🔄 처음부터 다시하기", key="restart_btn"):
